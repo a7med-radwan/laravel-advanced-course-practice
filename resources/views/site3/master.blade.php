@@ -64,6 +64,7 @@
                         "href="{{ route('site3.interests') }}">Interests</a>
                 </li>
                 <li class="nav-item"><a
+                    
                         class="nav-link js-scroll-trigger
                         {{-- {{ request()->url == route('site3.awards') ? 'active' : '' }} --}}
                         {{ request()->routeIs('site3.awards') ? 'active' : '' }}
