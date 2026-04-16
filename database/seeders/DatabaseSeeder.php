@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Insurance;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
@@ -26,7 +27,14 @@ class DatabaseSeeder extends Seeder
 
         Post::truncate();
         Tag::truncate();
+        User::truncate();
+        Insurance::truncate();
         Post::factory(1000)->create();
         Tag::factory(1000)->create();
+
+        // Add 3 users and 2 insurances, link first and third users to insurances
+        $users = User::factory(3)->create();
+        Insurance::factory()->create(['user_id' => $users[0]->id]);
+        Insurance::factory()->create(['user_id' => $users[2]->id]);
     }
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Posts</title>
+    <title>Categories</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 
@@ -20,8 +20,8 @@
 <body>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1>All Posts</h1>
-            <a href="{{ route('posts.create') }}" class="btn btn-dark w-25">Add New Post</a>
+            <h1>All Categories</h1>
+            <a href="{{ route('categories.create') }}" class="btn btn-dark w-25">Add New Category</a>
         </div>
 
         @if (session('msg'))
@@ -31,7 +31,7 @@
             </div>
         @endif
 
-        <form action="{{ route('posts.index') }}" method="GET">
+        <form action="{{ route('categories.index') }}" method="GET">
             <div class="input-group mb-3">
                 <input type="text" class="form-control w-50" placeholder="Search about anything.."
                     aria-label="Search about anything.." name="search" value="{{ request()->search }}"
@@ -47,7 +47,7 @@
             </div>
         </form>
         <div class="table-content">
-            @include('posts.table')
+            @include('categories.table')
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

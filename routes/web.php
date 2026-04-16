@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\MailsController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RelationController;
 use App\Http\Controllers\Site1Controller;
 use App\Http\Controllers\Site2Controller;
 use App\Http\Controllers\Site3Controller;
@@ -111,7 +113,13 @@ Route::get('sent-mail',[MailsController::class, 'send_mail']);
 Route::get('contact-us',[MailsController::class, 'contact_us'])->name('contact_us');
 Route::post('contact-us',[MailsController::class, 'contact_us_data'])->name('contact_us_data');
 
-Route::get('posts',[PostController::class,'index'])->name('posts.index');
-Route::get('posts/create',[PostController::class,'create'])->name('posts.create');
-Route::post('posts/create',[PostController::class,'store'])->name('posts.store');
-Route::delete('posts/{id}/delete',[PostController::class,'destroy'])->name('posts.destroy');
+// Route::get('posts',[PostController::class,'index'])->name('posts.index');
+// Route::get('posts/create',[PostController::class,'create'])->name('posts.create');
+// Route::post('posts/create',[PostController::class,'store'])->name('posts.store');
+// Route::delete('posts/{id}/delete',[PostController::class,'destroy'])->name('posts.destroy');
+// Route::get('posts/{id}/edit',[PostController::class,'edit'])->name('posts.edit');
+// Route::put('posts/{id}/update',[PostController::class,'update'])->name('posts.update');
+
+Route::resource('posts',PostController::class);
+Route::resource('categories',CategoryController::class);
+Route::get('one-to-one',[RelationController::class, 'one_to_one'])->name('one_to_one');

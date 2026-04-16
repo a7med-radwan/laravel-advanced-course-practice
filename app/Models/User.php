@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    function insurance() {
+        return  $this->hasOne(Insurance::class)->withDefault() ;
+
+    }
 }
