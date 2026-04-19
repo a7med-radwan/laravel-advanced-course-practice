@@ -12,6 +12,6 @@ class Insurance extends Model
     protected $fillable = ['serial', 'expire', 'wife_name', 'user_id'];
 
     function user() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

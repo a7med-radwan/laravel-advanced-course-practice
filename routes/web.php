@@ -123,3 +123,9 @@ Route::post('contact-us',[MailsController::class, 'contact_us_data'])->name('con
 Route::resource('posts',PostController::class);
 Route::resource('categories',CategoryController::class);
 Route::get('one-to-one',[RelationController::class, 'one_to_one'])->name('one_to_one');
+
+Route::get('one-to-many',[RelationController::class, 'one_to_many'])->name('one_to_many');
+Route::post('one-to-many',[RelationController::class, 'one_to_many_data'])->name('one_to_many_data');
+
+Route::get('many-to-many',[RelationController::class, 'many_to_many'])->name('many_to_many');
+Route::post('many-to-many',[RelationController::class, 'many_to_many_data'])->name('many_to_many_data');
